@@ -1,10 +1,30 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# -*- coding: utf-8 -*-
 
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-cp ./vimrc ~/.vim/vimrc
-ln ~/.vimrc ~/.vim/vimrc
+VIM_DIR=${HOME}/.vim
+VIM_BUNDLE=${VIM_DIR}/bundle
+VUNDLE_GIT="https://github.com/VundleVim/Vundle.vim.git"
+
+[[ -d "$VIM_DIR" ]] && \
+    { echo "$VIM_DIR already exists. Please move it first"; exit 1; }
+
+[[ -e "${VIM_DIR}/.vimrc" ]] && \
+    { echo "$VIM_DIR/.vimrc already exists. Please move it first"; exit 1; }
+
+if ! [[ -d "$VIM_DIR" ]]; then
+    mkdir -p $VIM_DIR
+    echo "$VIM_DIR created"
+fi
+
+if ! [[ -e ${VIM_BUNDLE}/Vundle.vim ]]; then
+    mkdir -p ${VIM_BUNDLE}
+    git clone $VUNDLE_GIT ${VIM_BUNDLE}/Vundle.vim
+    echo "$VUNDLE_GIT cloned"
+fi
+
+rsync ./vimrc $VIM_DIR
+ln ${PWD}/vimrc ${HOME}/.vimrc
 vim +PluginInstall +qall
+pip install flake8
 
-echo "dont forget to install / update YoucompleteMe"
-echo "https://github.com/j1z0/dotfiles.git"
-
+echo "setup vim-config: done"
