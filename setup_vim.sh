@@ -3,6 +3,7 @@
 
 VIM_DIR=${HOME}/.vim
 VIM_BUNDLE=${VIM_DIR}/bundle
+VIM_UNDO=${VIM_DIR}/vim_undo #persistent file undo
 VUNDLE_GIT="https://github.com/VundleVim/Vundle.vim.git"
 
 [[ -d "$VIM_DIR" ]] && \
@@ -13,6 +14,7 @@ VUNDLE_GIT="https://github.com/VundleVim/Vundle.vim.git"
 
 if ! [[ -d "$VIM_DIR" ]]; then
     mkdir -p $VIM_DIR
+    mkdir -p $VIM_UNDO
     echo "$VIM_DIR created"
 fi
 

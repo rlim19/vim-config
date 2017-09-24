@@ -136,6 +136,6 @@ set clipboard=unnamed
 
 "permanent undo
 set undofile
-set undodir=~/.vim/vim_undo
+set undodir=${HOME}/.vim/vim_undo
 nnoremap <C-u> :GundoToggle<CR>
 let g:gundo_return_on_revert=0
