@@ -21,6 +21,7 @@ Plugin 'isnowfy/python-vim-instant-markdown'
 Plugin 'jtratner/vim-flavored-markdown'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'nelstrom/vim-markdown-preview'
+Plugin 'tpope/vim-surround'
 
 "python sytax checker
 Plugin 'nvie/vim-flake8'
@@ -29,8 +30,8 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'scrooloose/syntastic'
 
 "auto-completion stuff
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'klen/rope-vim'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'klen/rope-vim'
 "Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 "code folding
@@ -38,6 +39,9 @@ Plugin 'tmhedberg/SimpylFold'
 
 "tree undo
 Plugin 'sjl/gundo.vim'
+
+Plugin 'jceb/vim-orgmode'
+Plugin 'tpope/vim-speeddating'
 
 call vundle#end()
 
